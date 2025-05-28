@@ -30,6 +30,7 @@ if __name__ == "__main__":
     start=(100,200)
     goal=(380,520)
     
+
     cv2.circle(img,(start[0],start[1]),5,(0,0,1),3)
     cv2.circle(img,(goal[0],goal[1]),5,(0,1,0),3)
 
@@ -52,6 +53,7 @@ if __name__ == "__main__":
     print(path)
     
     # Extract Path
+
     if not args.smooth:
         for i in range(len(path)-1):
             cv2.line(img, pos_int(path[i]), pos_int(path[i+1]), (1,0,0), 2)
@@ -64,3 +66,4 @@ if __name__ == "__main__":
     img_ = cv2.flip(img,0)
     cv2.imshow("Path Planning",img_)
     k = cv2.waitKey(0)
+    
